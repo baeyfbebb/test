@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    overflow: hidden;
+}
+
+#sakura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 0; /* Bottom layer */
+}
+
+.btnbg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.timer-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #D97706; /* Amber */
+    text-align: left;
+    z-index: 10;
+}
+
+.timer-container h1 {
+    font-size: 48px;
+    font-family: 'Parisienne', cursive;
+    margin-bottom: 10px;
+}
+
+.timer-container p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.cyber-rose-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    background-color: #F9A8D4; /* Pastel pink */
+    border: 2px solid #F472B6; /* Deeper pink border */
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    overflow: hidden;
+    animation: glow 2s ease-in-out infinite;
+}
+
+.cyber-rose-btn:hover {
+    background-color: #F472B6; /* Deeper pink */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+}
+
+.cyber-rose-btn:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(249, 168, 212, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(249, 168, 212, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(249, 168, 212, 0.3); }
+}
+
+@keyframes ripple {
+    to {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+.poem-center, .poem-bottom-right {
+    color: #F5F5DC; /* Beige */
+    font-family: 'Parisienne', cursive;
+    font-size: 28px;
+    line-height: 1.6;
+    text-align: left;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Improve readability */
+    z-index: 5;
+}
+
+.poem-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+}
+
+.poem-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 600px;
+}
+
+.poem-center p, .poem-bottom-right p {
+    margin: 0;
+}
